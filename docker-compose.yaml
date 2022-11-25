@@ -1,0 +1,11 @@
+version: '3'
+services:
+  aws-glue:
+    image: amazon/aws-glue-libs:glue_libs_3.0.0_image_01
+    container_name: 'aws-glue'
+    ports:
+      - 8888:8888
+      - 4040:4040
+    command: /home/glue_user/jupyter/jupyter_start.sh
+    volumes:
+      - ./workdir:/home/glue_user/workspace/jupyter_workspace
